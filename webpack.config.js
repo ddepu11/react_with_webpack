@@ -1,16 +1,20 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
-const webpack = require("webpack");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const path = require("path");
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+
+const ESLintPlugin = require('eslint-webpack-plugin');
+
+const webpack = require('webpack');
+
+const path = require('path');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
 
-  mode: "development",
+  mode: 'development',
 
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, 'dist'),
   },
 
   module: {
@@ -18,31 +22,40 @@ module.exports = {
       {
         test: /\.css$/i,
         exclude: /\node_modules/,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.jsx?$/i,
         exclude: /(node_modules|bower_components)/,
-        use: "babel-loader",
+        use: ['babel-loader'],
       },
     ],
   },
 
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
+    extensions: ['*', '.js', '.jsx'],
   },
 
   plugins: [
-    new HtmlWebpackPlugin({ template: "./src/index.html" }),
+    new ESLintPlugin({
+      emitError: true,
+      emitWarning: true,
+      failOnError: true,
+      extensions: ['js', 'jsx'],
+      overrideConfigFile: './.eslintrc.js',
+    }),
+
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
     new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin(),
   ],
 
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
 
   devServer: {
-    contentBase: "./dist",
+    contentBase: './dist',
     hot: true,
     port: 3000,
+    quiet: false,
   },
 };
