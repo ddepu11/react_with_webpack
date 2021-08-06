@@ -17,8 +17,14 @@ module.exports = {
         exclude: /\node_modules/,
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.jsx?$/i,
+        exclude: /(node_modules|bower_components)/,
+        use: "babel-loader",
+      },
     ],
   },
+
   plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
 
   devtool: "inline-source-map",
