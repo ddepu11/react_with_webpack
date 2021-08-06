@@ -1,13 +1,13 @@
 module.exports = {
   presets: [
-    "@babel/preset-env",
+    '@babel/preset-env',
     [
-      "@babel/preset-react",
+      '@babel/preset-react',
       {
-        runtime: "automatic",
+        runtime: 'automatic',
       },
     ],
   ],
 
-  plugins: ["react-refresh/babel"],
+  plugins: ['react-refresh/babel'],
 };

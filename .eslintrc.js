@@ -7,5 +7,8 @@ module.exports = {
 
   rules: {
     'prettier/prettier': ['warn', { endOfLine: 'auto' }],
+
+    'react/react-in-jsx-scope': ['off'],
+    'no-undef': 'off',
   },
 };
