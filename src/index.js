@@ -1,7 +1,5 @@
+import React from "react";
+import { render } from "react-dom";
 import "./style/index.css";
 
-const a = ["Mohan", "Sohan", "Rohan", "Denial", "John"];
-
-a.forEach((item) => {
-  console.log(`Hello  ${item} `);
-});
+render(<h1>Hello React</h1>, document.getElementById("root"));
