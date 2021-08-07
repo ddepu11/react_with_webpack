@@ -10,13 +10,34 @@ const webpack = require('webpack');
 
 const path = require('path');
 
+const mode = process.env.NODE_ENV;
+
+const plugins = [new HtmlWebpackPlugin({ template: './src/index.html' }), new CleanWebpackPlugin()];
+
+if (mode === 'development') {
+  plugins.push(
+    new webpack.HotModuleReplacementPlugin(),
+
+    new ReactRefreshWebpackPlugin(),
+
+    new ESLintPlugin({
+      emitError: true,
+      emitWarning: true,
+      failOnError: true,
+      extensions: ['js', 'jsx'],
+      overrideConfigFile: './.eslintrc.js',
+    })
+  );
+}
+
 module.exports = {
   entry: './src/index.jsx',
 
-  mode: 'development',
+  mode,
 
   output: {
     path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'images/[hash][ext][query]',
   },
 
   module: {
@@ -43,23 +64,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
 
-  plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
-
-    new webpack.HotModuleReplacementPlugin(),
-
-    new ReactRefreshWebpackPlugin(),
-
-    new ESLintPlugin({
-      emitError: true,
-      emitWarning: true,
-      failOnError: true,
-      extensions: ['js', 'jsx'],
-      overrideConfigFile: './.eslintrc.js',
-    }),
-
-    new CleanWebpackPlugin(),
-  ],
+  plugins,
 
   devtool: 'inline-source-map',
 

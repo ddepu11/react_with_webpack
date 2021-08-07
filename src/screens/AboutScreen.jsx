@@ -33,6 +33,14 @@ const AboutScreen = () => (
         <li>
           <span>Highly configurable</span>
         </li>
+
+        <li>
+          <span>Mobile friendly</span>
+        </li>
+
+        <li>
+          <span>Mobile friendly</span>
+        </li>
       </ul>
     </div>
 
