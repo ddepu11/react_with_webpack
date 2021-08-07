@@ -15,6 +15,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
 
   module: {
@@ -24,6 +25,7 @@ module.exports = {
         exclude: /\node_modules/,
         use: ['style-loader', 'css-loader'],
       },
+
       {
         test: /\.jsx?$/i,
         exclude: /(node_modules|bower_components)/,
@@ -38,6 +40,7 @@ module.exports = {
 
   plugins: [
     new ESLintPlugin({
+      context: './src',
       emitError: true,
       emitWarning: true,
       failOnError: true,
