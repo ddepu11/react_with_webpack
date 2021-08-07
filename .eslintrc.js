@@ -10,8 +10,6 @@ module.exports = {
   plugins: ['react', 'prettier'],
 
   rules: {
-    'prettier/prettier': ['warn', { endOfLine: 'auto' }],
-
     'react/react-in-jsx-scope': ['off'],
   },
 };
