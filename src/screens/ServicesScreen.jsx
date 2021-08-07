@@ -20,6 +20,12 @@ const Wrapper = styled.main`
     text-transform: capitalize;
     font-weight: 200;
   }
+
+  @media screen and (max-width: 500px) {
+    h2 {
+      font-size: 1.5em;
+    }
+  }
 `;
 
 export default ServicesScreen;

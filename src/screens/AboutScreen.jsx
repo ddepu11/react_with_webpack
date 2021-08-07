@@ -93,9 +93,42 @@ const Wrapper = styled.main`
   h2 {
     font-size: 1.87;
     letter-spacing: 2px;
-    /* text-transform: capitalize; */
     font-weight: 200;
     margin-top: 95px;
+  }
+
+  @media screen and (max-width: 475px) {
+    p {
+      padding: 0 0 15px;
+      font-size: 1.2em;
+      margin-top: 25px;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      margin-top: 95px;
+    }
+
+    .features_div {
+      padding: 0 5px;
+
+      h3 {
+        font-size: 1.4em;
+      }
+
+      ul {
+        padding: 0 0px 0;
+
+        span {
+          padding: 5px 5px;
+          margin-bottom: 12px;
+        }
+
+        span:hover {
+          transform: scale(1.05) translateX(10px) translateY(-3px);
+        }
+      }
+    }
   }
 `;
 

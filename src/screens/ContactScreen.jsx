@@ -57,6 +57,32 @@ const Wrapper = styled.main`
       cursor: pointer;
     }
   }
+
+  @media screen and (max-width: 745px) {
+    .contact_div {
+      flex-direction: column;
+
+      .row {
+        width: 95%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .contact_div {
+      flex-direction: column;
+
+      .row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 10px;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+      }
+    }
+  }
 `;
 
 export default ContactScreen;
