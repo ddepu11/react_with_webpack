@@ -1,22 +1,23 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => (
   <Wrapper>
     <ul className='flex'>
       <li>
-        <a href='/'>Home</a>
+        <Link to='/'>Home</Link>
       </li>
 
       <li>
-        <a href='/'>About</a>
+        <Link to='/about'>About</Link>
       </li>
 
       <li>
-        <a href='/'>Contact</a>
+        <Link to='/contact'>Contact</Link>
       </li>
 
       <li>
-        <a href='/'>Services</a>
+        <Link to='/services'>Services</Link>
       </li>
     </ul>
   </Wrapper>
@@ -28,15 +29,19 @@ const Wrapper = styled.nav`
 
   ul {
     justify-content: space-between;
-    /* background: #555; */
 
-    li {
+    a {
       padding: 10px 20px;
       transition: transform 0.5s ease;
     }
 
-    li:hover {
+    a:hover {
       transform: scale(1.1);
+      background: #333;
+    }
+
+    a:last-child:hover {
+      transform: translateX(-2px) scale(1.1);
       background: #333;
     }
 
