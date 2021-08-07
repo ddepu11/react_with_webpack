@@ -12,7 +12,7 @@ const path = require('path');
 
 const mode = process.env.NODE_ENV;
 
-const plugins = [new HtmlWebpackPlugin({ template: './src/index.html' }), new CleanWebpackPlugin()];
+const plugins = [new HtmlWebpackPlugin({ template: './src/index.html' })];
 
 if (mode === 'development') {
   plugins.push(
@@ -28,6 +28,10 @@ if (mode === 'development') {
       overrideConfigFile: './.eslintrc.js',
     })
   );
+}
+
+if (mode === 'production') {
+  plugins.push(new CleanWebpackPlugin());
 }
 
 module.exports = {
