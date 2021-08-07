@@ -31,15 +31,29 @@ const Wrapper = styled.main`
     letter-spacing: 2px;
     text-transform: capitalize;
     font-weight: 400;
-    margin-top: 30px;
+    margin-top: 50px;
   }
 
   .tools_icon {
     padding: 10px 0;
-    margin-top: 50px;
+    margin-top: 100px;
     font-size: 8em;
     flex-wrap: wrap;
     gap: 50px 50px;
+  }
+
+  @media screen and (max-width: 655px) {
+    h2 {
+      margin-top: 25px;
+    }
+
+    .tools_icon {
+      padding: 10px 0;
+      margin-top: 60px;
+      font-size: 8em;
+      flex-wrap: wrap;
+      gap: 50px 50px;
+    }
   }
 `;
 
