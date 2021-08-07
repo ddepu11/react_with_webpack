@@ -1,7 +1,7 @@
 module.exports = {
   parser: '@babel/eslint-parser',
 
-  ignorePatterns: ['dist/*'],
+  ignorePatterns: ['dist'],
 
   extends: ['airbnb', 'airbnb/hooks', 'prettier', 'plugin:react/recommended'],
 

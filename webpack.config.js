@@ -2,6 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 const webpack = require('webpack');
@@ -15,7 +17,6 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    clean: true,
   },
 
   module: {
@@ -39,8 +40,13 @@ module.exports = {
   },
 
   plugins: [
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
+
+    new webpack.HotModuleReplacementPlugin(),
+
+    new ReactRefreshWebpackPlugin(),
+
     new ESLintPlugin({
-      context: './src',
       emitError: true,
       emitWarning: true,
       failOnError: true,
@@ -48,9 +54,7 @@ module.exports = {
       overrideConfigFile: './.eslintrc.js',
     }),
 
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
-    new webpack.HotModuleReplacementPlugin(),
-    new ReactRefreshWebpackPlugin(),
+    new CleanWebpackPlugin(),
   ],
 
   devtool: 'inline-source-map',
