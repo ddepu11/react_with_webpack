@@ -31,7 +31,7 @@ if (mode === 'development') {
 }
 
 if (mode === 'production') {
-  plugins.push(new CleanWebpackPlugin({ exclude: '_redirects' }));
+  plugins.push(new CleanWebpackPlugin());
 }
 
 module.exports = {
