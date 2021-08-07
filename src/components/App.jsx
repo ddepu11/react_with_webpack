@@ -33,7 +33,9 @@ const App = () => (
 );
 
 const Wrapper = styled.main`
-  padding: 5px 5px;
+  padding: 10px 5px;
+  max-width: 960px;
+  margin: 0 auto;
 `;
 
 export default App;
