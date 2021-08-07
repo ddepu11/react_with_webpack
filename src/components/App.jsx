@@ -1,27 +1,17 @@
 import styled from 'styled-components';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const App = () => (
   <Wrapper>
-    <div className='buttons'>
-      <h1>Hello </h1>
-
-      <ul>
-        <li>
-          <p>Helloo Wordl</p>
-        </li>
-        <li>
-          <p>Aaasha</p>
-        </li>
-        <li>
-          <button type='submit'>Submit</button>
-        </li>
-      </ul>
-    </div>
+    <Router>
+      <Navbar />
+    </Router>
   </Wrapper>
 );
 
 const Wrapper = styled.main`
-  padding: 25px 0;
+  padding: 5px 5px;
 `;
 
 export default App;
