@@ -23,7 +23,9 @@ const Navbar = () => {
   return (
     <Wrapper className='flex'>
       <div className='icon flex'>
-        <GrReactjs fontSize='3em' className='react' />
+        <div className='react flex'>
+          <GrReactjs fontSize='3em' />
+        </div>
         <span>Wabpack + React</span>
       </div>
 
@@ -69,6 +71,11 @@ const Wrapper = styled.nav`
     }
   }
 
+  .react {
+    animation: spin 8s infinite linear;
+    color: #1aafd4;
+  }
+
   .inner {
     justify-content: space-between;
 
@@ -98,6 +105,16 @@ const Wrapper = styled.nav`
     display: none;
   }
 
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
   @media screen and (max-width: 746px) {
     flex-direction: column;
     align-items: flex-start;
@@ -107,31 +124,27 @@ const Wrapper = styled.nav`
       height: 0;
       overflow: hidden;
       transition: height 0.5s ease-in-out;
+      width: 100%;
     }
 
     .inner {
       flex-direction: column;
       align-items: flex-start;
+      padding: 0 0 8px;
 
+      li,
       a {
-        padding: 10px 20px;
-        transition: transform 0.5s ease;
+        width: 100%;
       }
 
-      a:hover {
-        transform: scale(1.1);
-        background: #333;
-      }
+      li {
+        a:hover {
+          transform: scale(1.05) !important;
+        }
 
-      a:last-child:hover {
-        transform: translateX(-2px) scale(1.1);
-        background: #333;
-      }
-
-      a {
-        font-size: 1.2em;
-        text-transform: uppercase;
-        letter-spacing: 2px;
+        a {
+          font-size: 1.1em;
+        }
       }
     }
 

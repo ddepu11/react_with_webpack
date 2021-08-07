@@ -36,13 +36,12 @@ const AboutScreen = () => (
       </ul>
     </div>
 
-    <h2>Developed by &copy;deepanshu tiwari {new Date().getFullYear()}</h2>
+    <h2>Developed by &copy;deepanshu_tiwari {new Date().getFullYear()}</h2>
   </Wrapper>
 );
 
 const Wrapper = styled.main`
-  padding: 10px 10px;
-  height: 90vh;
+  padding: 10px 10px 30px;
   flex-direction: column;
   margin-top: 10px;
   text-align: center;
@@ -92,9 +91,9 @@ const Wrapper = styled.main`
   }
 
   h2 {
-    font-size: 2em;
+    font-size: 1.87;
     letter-spacing: 2px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     font-weight: 200;
     margin-top: 95px;
   }
