@@ -6,9 +6,11 @@ const HomeScreen = () => (
   <Wrapper>
     <h2>A react web appliction configured in webpack 5</h2>
 
+    <h3>Tools that i have used:-</h3>
     <div className='tools_icon flex'>
       <div className='webpack'>
         <SiWebpack />
+
         <div className='cover'>
           <span>Webpack</span>
         </div>
@@ -64,19 +66,27 @@ const Wrapper = styled.main`
   margin-top: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-  text-align: center;
 
   h2 {
+    text-align: center;
     font-size: 1.6em;
     letter-spacing: 2px;
     text-transform: capitalize;
     font-weight: 400;
-    margin-top: 40px;
+    margin-top: 20px;
+  }
+
+  h3 {
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-top: 50px;
+    padding: 0 0 0 10px;
   }
 
   .tools_icon {
     padding: 10px 0 50px;
-    margin-top: 80px;
+    margin-top: 20px;
     font-size: 8em;
     flex-wrap: wrap;
     gap: 50px 30px;
@@ -104,6 +114,7 @@ const Wrapper = styled.main`
         display: flex;
         justify-content: center;
         align-items: flex-end;
+        text-align: center;
 
         span {
           font-size: 18px;
