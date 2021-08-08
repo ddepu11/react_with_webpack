@@ -5,6 +5,7 @@ import HomeScreen from '../screens/HomeScreen';
 import AboutScreen from '../screens/AboutScreen';
 import ContactScreen from '../screens/ContactScreen';
 import ServicesScreen from '../screens/ServicesScreen';
+import Footer from './Footer';
 
 const App = () => (
   <Wrapper>
@@ -28,6 +29,7 @@ const App = () => (
           <ServicesScreen />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   </Wrapper>
 );
