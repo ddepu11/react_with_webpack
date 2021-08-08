@@ -89,7 +89,7 @@ module.exports = {
 
   plugins,
 
-  devtool: 'inline-source-map',
+  devtool: mode === 'production' ? false : 'inline-source-map',
 
   devServer: {
     contentBase: './dist',
