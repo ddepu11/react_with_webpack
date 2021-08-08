@@ -6,6 +6,7 @@ import AboutScreen from '../screens/AboutScreen';
 import ContactScreen from '../screens/ContactScreen';
 import ServicesScreen from '../screens/ServicesScreen';
 import Footer from './Footer';
+import ErrorScreen from '../screens/ErrorScreen';
 
 const App = () => (
   <Wrapper>
@@ -27,6 +28,10 @@ const App = () => (
 
         <Route exact path='/services'>
           <ServicesScreen />
+        </Route>
+
+        <Route path='*'>
+          <ErrorScreen />
         </Route>
       </Switch>
       <Footer />
