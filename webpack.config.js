@@ -4,6 +4,8 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const CopyPlugin = require('copy-webpack-plugin');
+
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 const webpack = require('webpack');
@@ -31,7 +33,17 @@ if (mode === 'development') {
 }
 
 if (mode === 'production') {
-  plugins.push(new CleanWebpackPlugin());
+  plugins.push(
+    new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/_redirects'),
+          to: path.resolve(__dirname, 'dist'),
+        },
+      ],
+    })
+  );
 }
 
 module.exports = {
