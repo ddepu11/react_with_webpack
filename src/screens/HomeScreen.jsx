@@ -7,13 +7,54 @@ const HomeScreen = () => (
     <h2>A react web appliction configured in webpack 5</h2>
 
     <div className='tools_icon flex'>
-      <SiWebpack />
-      <SiBabel />
-      <SiJavascript />
-      <FaHtml5 />
-      <SiCss3 />
-      <SiPrettier />
-      <SiEslint />
+      <div className='webpack'>
+        <SiWebpack />
+        <div className='cover'>
+          <span>Webpack</span>
+        </div>
+      </div>
+
+      <div className='babel'>
+        <SiBabel />
+        <div className='cover'>
+          <span>babel</span>
+        </div>
+      </div>
+
+      <div className='js'>
+        <SiJavascript />
+        <div className='cover'>
+          <span>JavaScript</span>
+        </div>
+      </div>
+
+      <div className='html5'>
+        <FaHtml5 />
+        <div className='cover'>
+          <span>Html5</span>
+        </div>
+      </div>
+
+      <div className='css3'>
+        <SiCss3 />
+        <div className='cover'>
+          <span>CSS3</span>
+        </div>
+      </div>
+
+      <div className='prettier'>
+        <SiPrettier />
+        <div className='cover'>
+          <span>prettier</span>
+        </div>
+      </div>
+
+      <div className='eslint'>
+        <SiEslint />
+        <div className='cover'>
+          <span>eslint</span>
+        </div>
+      </div>
     </div>
   </Wrapper>
 );
@@ -39,7 +80,52 @@ const Wrapper = styled.main`
     margin-top: 100px;
     font-size: 8em;
     flex-wrap: wrap;
-    gap: 50px 50px;
+    gap: 50px 30px;
+
+    > * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: rgba(23, 118, 182, 0.3) 0px 1px 2px 0px, rgba(12, 118, 199, 0.15) 0px 2px 6px 2px;
+      padding: 15px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.5s ease;
+
+      .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: #1aafd4;
+        opacity: 0.6;
+        transform: translateY(100%) translateX(-11%) rotate(80deg);
+        transition: transform 0.5s ease;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        span {
+          font-size: 22px;
+          color: #aaa;
+          font-weight: 600;
+          text-transform: uppercase;
+          left: 15px;
+          background: #181717;
+          width: 100%;
+          letter-spacing: 2px;
+        }
+      }
+    }
+
+    > *:hover .cover {
+      transform: translateY(0%);
+    }
+
+    > *:hover {
+      transform: scale(1.1) translateY(-10px);
+    }
   }
 
   @media screen and (max-width: 655px) {
