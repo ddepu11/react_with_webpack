@@ -23,11 +23,17 @@ const Wrapper = styled.main`
     font-size: 1.6em;
     letter-spacing: 2px;
     font-weight: 400;
-    margin-top: 40px;
   }
 
   span {
     font-size: 4em;
+    padding: 10px 0 0;
+  }
+
+  @media screen and (max-width: 400px) {
+    h2 {
+      font-size: 1.4em;
+    }
   }
 `;
 
