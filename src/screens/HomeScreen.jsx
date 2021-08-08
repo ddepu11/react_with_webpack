@@ -107,7 +107,7 @@ const Wrapper = styled.main`
         align-items: flex-end;
 
         span {
-          font-size: 22px;
+          font-size: 18px;
           color: #aaa;
           font-weight: 600;
           text-transform: uppercase;
