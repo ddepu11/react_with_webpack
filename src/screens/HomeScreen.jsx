@@ -4,7 +4,7 @@ import { FaHtml5 } from 'react-icons/fa';
 
 const HomeScreen = () => (
   <Wrapper>
-    <h2>A react web appliction configured in webpack 5</h2>
+    <h2>A react web appliction created using webpack 5.</h2>
 
     <h3>Tools that i have used:-</h3>
     <div className='tools_icon flex'>
@@ -141,11 +141,16 @@ const Wrapper = styled.main`
   @media screen and (max-width: 655px) {
     h2 {
       margin-top: 25px;
+      font-size: 1.5em;
+    }
+
+    h3 {
+      margin-top: 40px;
     }
 
     .tools_icon {
       padding: 10px 0;
-      margin-top: 60px;
+      margin-top: 40px;
       font-size: 8em;
       flex-wrap: wrap;
       gap: 50px 50px;
