@@ -61,7 +61,6 @@ const HomeScreen = () => (
 
 const Wrapper = styled.main`
   padding: 10px 10px;
-  min-height: 85vh;
   margin-top: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
@@ -72,12 +71,12 @@ const Wrapper = styled.main`
     letter-spacing: 2px;
     text-transform: capitalize;
     font-weight: 400;
-    margin-top: 50px;
+    margin-top: 40px;
   }
 
   .tools_icon {
-    padding: 10px 0;
-    margin-top: 100px;
+    padding: 10px 0 50px;
+    margin-top: 80px;
     font-size: 8em;
     flex-wrap: wrap;
     gap: 50px 30px;

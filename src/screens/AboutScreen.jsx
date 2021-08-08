@@ -43,7 +43,7 @@ const AboutScreen = () => (
         </li>
 
         <li>
-          <span>it is Being hoted on netlify</span>
+          <span>it is Being hosted on netlify</span>
         </li>
       </ul>
     </div>
