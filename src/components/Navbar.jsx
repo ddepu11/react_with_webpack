@@ -22,7 +22,6 @@ const Navbar = () => {
 
   const closeMenu = () => {
     outerDiv.current.style.height = '0px';
-    console.log('salks');
   };
 
   return (
