@@ -27,12 +27,12 @@ const Navbar = () => {
 
   return (
     <Wrapper className='flex'>
-      <div className='icon flex'>
+      <Link to='/' className='icon flex'>
         <div className='react flex'>
           <GrReactjs fontSize='3em' />
         </div>
         <span>Wabpack + React</span>
-      </div>
+      </Link>
 
       <div className='outer' ref={outerDiv}>
         <ul className='inner flex' ref={innerDiv}>
@@ -108,7 +108,7 @@ const Wrapper = styled.nav`
     }
 
     a {
-      font-size: 1.2em;
+      font-size: 1.05em;
       text-transform: uppercase;
       letter-spacing: 2px;
     }
