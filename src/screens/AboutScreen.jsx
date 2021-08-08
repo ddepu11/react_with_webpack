@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const AboutScreen = () => (
   <Wrapper>
     <p>
-      This is a react web app, configured in webpack 5, with babel compiler also integrated eslint with airbnb style
-      guide and added prettier for formating.
+      This is a react web app, configured in webpack 5, with babel compiler also integrated eslint
+      with airbnb style guide and added prettier for formating.
     </p>
 
     <div className='features_div'>
@@ -31,6 +31,10 @@ const AboutScreen = () => (
         </li>
 
         <li>
+          <span>Routing</span>
+        </li>
+
+        <li>
           <span>Highly configurable</span>
         </li>
 
@@ -39,7 +43,7 @@ const AboutScreen = () => (
         </li>
 
         <li>
-          <span>Mobile friendly</span>
+          <span>it is Being hoted on netlify</span>
         </li>
       </ul>
     </div>
