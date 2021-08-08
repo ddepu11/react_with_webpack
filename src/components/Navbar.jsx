@@ -8,7 +8,7 @@ const Navbar = () => {
   const innerDiv = useRef(null);
   const outerDiv = useRef(null);
 
-  const handleMenu = () => {
+  const toggleMenu = () => {
     const innerDivHeight = innerDiv.current.getBoundingClientRect().height;
 
     const outerDivHeight = outerDiv.current.getBoundingClientRect().height;
@@ -18,6 +18,11 @@ const Navbar = () => {
     } else {
       outerDiv.current.style.height = '0px';
     }
+  };
+
+  const closeMenu = () => {
+    outerDiv.current.style.height = '0px';
+    console.log('salks');
   };
 
   return (
@@ -32,25 +37,33 @@ const Navbar = () => {
       <div className='outer' ref={outerDiv}>
         <ul className='inner flex' ref={innerDiv}>
           <li>
-            <Link to='/'>Home</Link>
+            <Link onClick={closeMenu} to='/'>
+              Home
+            </Link>
           </li>
 
           <li>
-            <Link to='/about'>About</Link>
+            <Link onClick={closeMenu} to='/about'>
+              About
+            </Link>
           </li>
 
           <li>
-            <Link to='/contact'>Contact</Link>
+            <Link onClick={closeMenu} to='/contact'>
+              Contact
+            </Link>
           </li>
 
           <li>
-            <Link to='/services'>Services</Link>
+            <Link onClick={closeMenu} to='/services'>
+              Services
+            </Link>
           </li>
         </ul>
       </div>
 
       <div className='menu_bar flex'>
-        <FaBars fontSize='2em' cursor='pointer' onClick={handleMenu} />
+        <FaBars fontSize='2em' cursor='pointer' onClick={toggleMenu} />
       </div>
     </Wrapper>
   );
@@ -139,7 +152,7 @@ const Wrapper = styled.nav`
 
       li {
         a:hover {
-          transform: scale(1.05) !important;
+          transform: translateX(1em) !important;
         }
 
         a {
