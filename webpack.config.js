@@ -6,6 +6,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const CopyPlugin = require('copy-webpack-plugin');
 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 const webpack = require('webpack');
@@ -14,7 +16,10 @@ const path = require('path');
 
 const mode = process.env.NODE_ENV;
 
-const plugins = [new HtmlWebpackPlugin({ template: './src/index.html' })];
+const plugins = [
+  new HtmlWebpackPlugin({ template: './src/index.html' }),
+  new MiniCssExtractPlugin(),
+];
 
 if (mode === 'development') {
   plugins.push(
@@ -62,7 +67,7 @@ module.exports = {
       {
         test: /\.css$/i,
         exclude: /\node_modules/,
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
 
       {
@@ -70,6 +75,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         use: ['babel-loader'],
       },
+
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
