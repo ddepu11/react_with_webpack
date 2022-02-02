@@ -1,10 +1,12 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa';
 import { GrReactjs } from 'react-icons/gr';
 import { useRef } from 'react';
 
 const Navbar = () => {
+  const location = useLocation();
+
   const innerDiv = useRef(null);
   const outerDiv = useRef(null);
 
@@ -36,25 +38,37 @@ const Navbar = () => {
       <div className='outer' ref={outerDiv}>
         <ul className='inner flex' ref={innerDiv}>
           <li>
-            <Link onClick={closeMenu} to='/'>
+            <Link onClick={closeMenu} to='/' className={location.pathname === '/' ? 'active' : ''}>
               Home
             </Link>
           </li>
 
           <li>
-            <Link onClick={closeMenu} to='/about'>
+            <Link
+              onClick={closeMenu}
+              to='/about'
+              className={location.pathname === '/about' ? 'active' : ''}
+            >
               About
             </Link>
           </li>
 
           <li>
-            <Link onClick={closeMenu} to='/contact'>
+            <Link
+              onClick={closeMenu}
+              to='/contact'
+              className={location.pathname === '/contact' ? 'active' : ''}
+            >
               Contact
             </Link>
           </li>
 
           <li>
-            <Link onClick={closeMenu} to='/services'>
+            <Link
+              onClick={closeMenu}
+              to='/services'
+              className={location.pathname === '/services' ? 'active' : ''}
+            >
               Services
             </Link>
           </li>
@@ -95,7 +109,9 @@ const Wrapper = styled.nav`
       padding: 10px 20px;
       transition: transform 0.5s ease;
     }
-
+    a.active {
+      background: #333;
+    }
     a:hover {
       transform: scale(1.1);
       background: #333;
